@@ -1,3 +1,5 @@
+appdirs==1.4.3
+apturl==0.5.2
 asn1crypto==0.24.0
 bcrypt==3.1.7
 beautifulsoup4==4.8.2
@@ -22,7 +24,7 @@ entrypoints==0.3
 f==0.0.1
 fasteners==0.14.1
 filelock==3.7.1
-Flask==2.1.1
+Flask==2.1.2
 Flask-MySQL==1.5.2
 Flask-MySQLdb==1.0.1
 future==0.18.2
@@ -56,6 +58,7 @@ olefile==0.46
 onboard==1.4.1
 package-name==0.1
 paramiko==2.6.0
+pbr==5.9.0
 pexpect==4.6.0
 Pillow==7.0.0
 platformdirs==2.5.2
@@ -90,6 +93,7 @@ six==1.14.0
 soupsieve==1.9.5
 system-service==0.3
 systemd-python==234
+testresources==2.0.1
 tinycss==0.4
 ubuntu-advantage-tools==27.9
 ubuntu-drivers-common==0.0.0
