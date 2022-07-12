@@ -24,7 +24,7 @@ entrypoints==0.3
 f==0.0.1
 fasteners==0.14.1
 filelock==3.7.1
-Flask==2.1.2
+Flask==2.1.1
 Flask-MySQL==1.5.2
 Flask-MySQLdb==1.0.1
 future==0.18.2
