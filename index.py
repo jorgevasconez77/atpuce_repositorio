@@ -68,7 +68,7 @@ def valida_inicio():
 
 @app.route('/saldos')
 def saldos():
-    
+
     print("Entra a saldos")
     cur = mysql.connection.cursor()
     cur.execute("""

@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
+
+
 {% block content %}
+
 <div class="jumbotron">
-    <h1 class="display-4">Asociacion Trabajadores PUCE</h1>
+    <h1 class="display-4">Asociación Trabajadores PUCE</h1>
     <p class="lead">Aplicativo WEBApp</p>
     <hr class="my-4">
-    <p>Haga CLick para ver sus Saldos.</p>
+    <p>Haga click para ver sus saldos.</p>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Ingresar</a>
+        <a class="btn btn-primary btn-lg" href="{{ url_for('sign_in')}}" role="button">Ingresar</a>
     </p>
 </div>
+
 {% endblock %}
