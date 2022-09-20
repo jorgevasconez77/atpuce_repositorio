@@ -2,15 +2,16 @@
 
 
 {% block content %}
-
-<div class="jumbotron">
+<div class="container p-4 style=" background-color: #00958c;>
     <h1 class="display-4">Asociación Trabajadores PUCE</h1>
-    <p class="lead">Aplicativo WEBApp</p>
-    <hr class="my-4">
-    <p>Haga click para ver sus saldos.</p>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="{{ url_for('sign_in')}}" role="button">Ingresar</a>
-    </p>
-</div>
+    <p class="lead">Aplicativo WEBApp </p>
+    <p>Haga click para ver sus saldos</p>
+    <a class="btn btn-secondary" href="{{ url_for('sign_in')}}" role="button">Ingresar</a>
 
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a class="btn btn-secondary " href="https://atpuce.com/" role="button">Cerrar</a>
+    </div>
+
+    
+</div>
 {% endblock %}

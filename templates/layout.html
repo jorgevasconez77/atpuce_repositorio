@@ -11,50 +11,36 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- Llamada al css mediante codigo python, es un css personalizado -->
     <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+    <style>
+        .contenido {
+            display: flex;
+            justify-content: right;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navar Simple 
-    <nav class="navbar bg-light">
+    <nav class="navbar navbar-expand-lg " style="background-color: #00958c;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='images/PUCE.png')}}" alt="" width="110" height="80">
+                Inicio
+            </a>
+
+            <ul class="navbar-nav mr-auto">
+                <!--  <li class="nav-item"> -->
+                <a class="navbar-brand" href="{{ url_for('about')}}">Acerca de</a>
+                <!-- </li> -->
+            </ul>
         </div>
     </nav>
-    -->
-
-
-    <nav class="navbar navbar-expand-lg bg-light">
-
-        <div class="container-fluid">
-
-            <!-- <img src="/home/jorge/Escritorio/python-website/src/templates/atpuceICO.png" class="img-fluid" alt=""> -->
-
-            <a class="navbar-brand" href="/">WebApp</a>
-
-            
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon">
-
-                </span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about')}}">Acerca de</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container p-4">
-        {% block content %}
-        {% endblock %}
-
+    <p></p>
+    <div align="center">
+        <img src="{{ url_for('static', filename='images/LOGO_ATPUCE.png')}}" alt="" width="190" height="140">
     </div>
-
+    
+    {% block content %}
+    {% endblock %}
 </body>
 
-
+</html>

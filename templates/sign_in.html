@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATPUCE WEB APP</title>
-    <!-- CSS only BOOTSTRAP 5 plantillas css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- Llamada al css mediante codigo python, es un css personalizado -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
-</head>
+{% extends "layout.html" %}
 
 {% block content %}
-
-<!-- Navar Simple  -->
-<nav class="navbar bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="{{ url_for('home')}}" >Home</a>
-    </div>
-</nav>
 
 {% with messages = get_flashed_messages() %}
 {% if messages %}
@@ -31,28 +13,38 @@
 {% endfor %}
 {% endif%}
 {% endwith %}
-<div class="col-md-4 offset-md-4">
-    <br> </br>
-    <br> </br>
+<div class="col-md-4 offset-md-4" style="background-color: #00958c;">
     <div class="sticky-top">
         <form action="/valida_inicio" method="POST" class="border p-3 form">
             <div class="form-group">
-                <br> </br>
                 <label> Usuario: </label>
-                <br> </br>
                 <input type="text" name="usuario" placeholder="usuario" class="form-control" required />
             </div>
+            <p></p>
             <div class="form-group">
-                <br> </br>
+
                 <label> Password: </label>
-                <br> </br>
                 <input type="password" name="password" placeholder="password" class="form-control" required />
-                <br> </br>
+
             </div>
-            <button  type="submit">
+            <p></p>
+            <button type="submit">
                 Login
             </button>
         </form>
+
+
+        <form action="/password" mehtod="POST" class="border p-1 form">
+            <div class="contenido" style="background-color: #00958c;">
+                <button type="submit">
+                    Cambio Password
+                </button>
+            </div>
+        </form>
+
+        
+
     </div>
 </div>
+
 {% endblock %}

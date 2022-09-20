@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif%}
+{% endwith %}
+<div class="col-md-4 offset-md-4">
+    <br> </br>
+    <br> </br>
+    <div class="sticky-top">
+        <form action="/valida_inicio" method="POST" class="border p-3 form">
+            <div class="form-group">
+                <br> </br>
+                <label> Usuario: </label>
+                <br> </br>
+                <input type="text" name="usuario" placeholder="usuario" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <br> </br>
+                <label> Password: </label>
+                <br> </br>
+                <input type="password" name="password" placeholder="password" class="form-control" required />
+                <br> </br>
+            </div>
+            <button type="submit">
+                Login
+            </button>
+        </form>
+
+
+        <form action="/password" mehtod="POST" class="border p-1 form">
+            <div class="contenido">
+                <button type="submit" >
+                    Cambio Password
+                </button>
+            </div>    
+        </form>
+
+
+        
+    </div>
+</div>
+
+{% endblock %}
