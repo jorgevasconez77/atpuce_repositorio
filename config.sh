@@ -1,2 +1,2 @@
-export ATPUCE_DBUSER=developer
-export ATPUCE_DBPASS=s3cret0
+export ATPUCE_DBUSER=user
+export ATPUCE_DBPASS=123456
