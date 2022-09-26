@@ -1,0 +1,11 @@
+# Python
+__pycache__
+
+# SQLite databases
+*.sqlite
+
+# Virtual environment
+venv
+
+# IDE
+.idea

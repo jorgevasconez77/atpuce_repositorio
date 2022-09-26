@@ -1,0 +1,2 @@
+export ATPUCE_DBUSER=developer
+export ATPUCE_DBPASS=s3cret0
