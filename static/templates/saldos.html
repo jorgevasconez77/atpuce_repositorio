@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATPUCE WEB APP</title>
+    <!-- CSS only BOOTSTRAP 5 plantillas css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Llamada al css mediante codigo python, es un css personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+</head>
+
+{% block content %}
+
+<!-- Navar Simple  -->
+<nav class="navbar bg-light" role="navigation">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('sign_in')}}">Login</a>
+    </div>
+</nav>
+<div class="container p-4">
+    <div class="jumbotron">
+        <hr class="my-4">
+        {% for captacion in captaciones %}
+        <h1 class="display-4">{{captacion.1}}</h1>
+        {% endfor %}
+        <br>
+        </br>
+    </div>
+
+
+    <!-- captaciones -->
+    <h3> CAPTACIONES </h3>
+    <div class="row">
+        <div class="card card body">
+            <table class="table table-striped table-bordered bg-withe table-sm">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Saldo</th>
+                        <th>Fecha_Actualizacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for captacion in captaciones %}
+                    <tr>
+                        <td>{{captacion.3}} </td>
+                        <td>{{captacion.4}} </td>
+                        <td>{{captacion.5}} </td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr class="my-4">
+    <!-- colocaciones -->
+    <h3> COLOCACIONES </h3>
+    <div class="row">
+        <div class="card card body">
+            <table class="table table-striped table-bordered bg-withe table-sm">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Num Pres</th>
+                        <th>Capital Solicitado</td>
+                        <th>Saldo Capital</td>
+                        <th>Saldo Interes</td>
+                        <th>Saldo Total</th>
+                        <th>Cuotas Contratadas</th>
+                        <th>Fecha Adjudicacion</th>
+                        <th>Destino</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {% for colocacion in colocaciones %}
+                    <tr>
+                        <td>{{colocacion.0}} </td>
+                        <td>{{colocacion.1}} </td>
+                        <td>{{colocacion.2}} </td>
+                        <td>{{colocacion.3}} </td>
+                        <td>{{colocacion.4}} </td>
+                        <td>{{colocacion.5}} </td>
+                        <td>{{colocacion.6}} </td>
+                        <td>{{colocacion.7}} </td>
+                        <td>{{colocacion.8}} </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>ATPUCE WEB APP</title>
+    <!-- CSS only BOOTSTRAP 5 plantillas css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- Llamada al css mediante codigo python, es un css personalizado -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css')}}">
+    <style>
+        .contenido {
+            display: flex;
+            justify-content: right;
+        }
+    </style>
+    <!-- <script>
+        function nobackbutton() {
+            window.location.hash = "no-back-button";
+            window.location.hash = "Again-No-back-button"
+            window.onhashchange = function () { window.location.hash = "no-back-button"; }
+        }
+    </script> -->
+
+</head>
+
+<body>
+<!-- <body> -->
+    <!-- <script>
+        window.location.hash = "no-back-button";
+        window.location.hash = "Again-No-back-button"
+        window.onhashchange = function () { window.location.hash = "no-back-button"; }
+        window.addEventListener('popstate', function (event) {
+            history.pushState(null, null, window.location.pathname);
+            history.pushState(null, null, window.location.pathname);
+        }, false);
+    </script> -->
+
+    <nav class="navbar navbar-expand-lg " style="background-color: #00958c;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='images/PUCE.png')}}" alt="" width="110" height="80">
+                Inicio
+            </a>
+
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('saldos')}}">Saldos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('ahorro')}}">Ahorro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('busca_prestamos')}}">Prestamos y CXC</a>
+                </li>
+
+            </ul>
+
+            <a class="nav-link active" aria-current="page" href="https://atpuce.com/">Cerrar</a>
+            
+            <ul class="navbar-nav mr-auto">
+                <img src="{{ url_for('static', filename='images/LOGO_ATPUCE_2.png')}}" alt="" width="110" height="80">
+            </ul>
+        </div>
+    </nav>
+    <p></p>
+    {% block content %}
+    {% endblock %}
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="/static/noback.js"></script>
+</body>

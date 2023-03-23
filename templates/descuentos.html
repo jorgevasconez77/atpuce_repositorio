@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "layout_menu.html" %}
+
+<body>
+    {% block content %}
+    <div class="container-xl" style="background-color: #00958c;">
+        <h3> DESCUENTOS </h3>
+        <form method="post" action="/">
+            <label for="lista">Selecciona un elemento:</label>
+            <select name="lista" id="lista">
+                {% for item in items %}
+                <option value="{{ item[0] }}">{{ item[1] }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Enviar">
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in items_grilla %}
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.descripcion }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endblock %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('form').submit(function (event) {
+                    event.preventDefault();
+                    $.ajax({
+                        type: 'POST',
+                        url: '/',
+                        data: $('form').serialize(),
+                        success: function (response) {
+                            $('tbody').html(response);
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                });
+            });
+        </script>
+</body>

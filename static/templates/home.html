@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div class="container p-4 bg-light">
+    <h1 class="display-4">Asociación Trabajadores PUCE</h1>
+    <p class="lead">Aplicativo WEBApp </p> 
+    <p>Haga click para ver sus saldos</p>
+    <a class="btn btn-secondary" href="{{ url_for('sign_in')}}" role="button">Ingresar</a>
+</div>
+
+
+{% endblock %}

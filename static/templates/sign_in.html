@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 {% extends "layout.html" %}
 
 {% block content %}
@@ -14,44 +13,40 @@
 {% endfor %}
 {% endif%}
 {% endwith %}
-
-
-<div class="col-md-4 offset-md-4" style="background-color: #00958c;">
+<div class="col-md-4 offset-md-4">
+    <br> </br>
+    <br> </br>
     <div class="sticky-top">
-
-
-
-        <form action="/valida_inicio" method="POST" name="sign_in" autocomplete="off" class="border p-3 form">
-
-
+        <form action="/valida_inicio" method="POST" class="border p-3 form">
             <div class="form-group">
+                <br> </br>
                 <label> Usuario: </label>
-                <input type="text" name="usuario" placeholder="usuario" class="form-control" autocomplete="off" required />
+                <br> </br>
+                <input type="text" name="usuario" placeholder="usuario" class="form-control" required />
             </div>
-            <p></p>
             <div class="form-group">
-
+                <br> </br>
                 <label> Password: </label>
-                <input type="password" name="password" placeholder="password" class="form-control"  autocomplete="off" required  />
-
+                <br> </br>
+                <input type="password" name="password" placeholder="password" class="form-control" required />
+                <br> </br>
             </div>
-            <p></p>
             <button type="submit">
                 Login
             </button>
         </form>
 
 
-        <form action="/password" mehtod="POST" autocomplete="off"  class="border p-1 form">
-            <div class="contenido" style="background-color: #00958c;">
-                <button type="submit">
+        <form action="/password" mehtod="POST" class="border p-1 form">
+            <div class="contenido">
+                <button type="submit" >
                     Cambio Password
                 </button>
-            </div>
+            </div>    
         </form>
 
-        
 
+        
     </div>
 </div>
 

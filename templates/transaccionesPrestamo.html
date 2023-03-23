@@ -1,0 +1,41 @@
+<!-- templates/resultados.html -->
+{% extends "prestamos.html" %}
+
+{% block content %}
+<h1>Transacciones de : {{ nombrePR }} numPrestamo: {{ secuenciPrestamoCesantia }}</h1>
+<!-- transacciones -->
+<div class="row">
+
+    <div class="card card body">
+
+        <!-- table-sm table-responsive  -->
+        <table class="table table-striped table-bordered g-withe table-sm ">
+            <thead>
+                <tr>
+                    <th>TipoTran</th>
+                    <th>AbonoCapital</th>
+                    <th>AbonoInteres</td>
+                    <th>AbonoTotal</td>
+                    <th>Fecha</th>
+                    <th>SaldoCapital</th>
+                    <th>SaldoInteres</td>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for transaccion in transacciones %}
+                <tr>
+                    <td>{{transaccion.0}} </td>
+                    <td>{{transaccion.1}} </td>
+                    <td>{{transaccion.2}} </td>
+                    <td>{{transaccion.3}} </td>
+                    <td>{{transaccion.4}} </td>
+                    <td>{{transaccion.5}} </td>
+                    <td>{{transaccion.6}} </td>                     
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
